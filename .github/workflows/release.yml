@@ -4,6 +4,8 @@ on:
     tags: ['v*']
 jobs:
   build:
-    uses: oprobiu/AFAS/.github/workflows/build-release.yml@v0.0.2
+    uses: oprobiu/AFAS/.github/workflows/build-release.yml@v0.0.3
+    with:
+      tools-version: v0.0.3
     permissions:
       contents: write

@@ -4,51 +4,51 @@
   "notetype_id": 1584828357174,
   "notetype_name": "deutsche-vocab",
   "tools_repo": "oprobiu/AFAS",
-  "tools_version": "v0.0.3",
+  "tools_version": "v0.1.0",
   "fields": [
     {
-      "name": "Note ID",
+      "name": "note_id",
       "csv": "note_id"
     },
     {
-      "name": "de_word",
-      "csv": "de_word"
+      "name": "fo_word",
+      "csv": "fo_word"
     },
     {
-      "name": "de_sentence",
-      "csv": "de_sentence"
+      "name": "fo_sentence",
+      "csv": "fo_sentence"
     },
     {
-      "name": "ro_word",
-      "csv": "ro_word"
+      "name": "na_word",
+      "csv": "na_word"
     },
     {
-      "name": "ro_sentence",
-      "csv": "ro_sentence"
+      "name": "na_sentence",
+      "csv": "na_sentence"
     },
     {
-      "name": "ro_note",
-      "csv": "ro_note"
+      "name": "na_note",
+      "csv": "na_note"
     },
     {
-      "name": "de_audio",
-      "csv": "de_audio"
+      "name": "fo_sentence_audio",
+      "csv": "fo_sentence_audio"
     },
     {
-      "name": "de_word_audio",
-      "csv": "de_word_audio"
+      "name": "fo_word_audio",
+      "csv": "fo_word_audio"
     }
   ],
   "templates": [
     {
       "name": "Card 1",
-      "front": "{{de_word}} {{de_word_audio}}\n{{#de_sentence}}\n<br><br>\n<i>{{de_sentence}}</i>\n{{/de_sentence}}\n{{de_audio}}",
-      "back": "{{FrontSide}}\n\n<hr id=answer>\n\n{{ro_word}}\n{{#ro_sentence}}\n<br><br>\n<i>{{ro_sentence}}</i>\n{{/ro_sentence}}\n{{#ro_note}}\n<br><br>\n<small>{{ro_note}}</small>\n{{/ro_note}}"
+      "front": "{{#fo_sentence}}\n<i>{{fo_sentence}}</i>\n{{/fo_sentence}}\n{{fo_sentence_audio}}\n\n{{fo_word}} {{fo_word_audio}}",
+      "back": "{{FrontSide}}\n\n<hr id=answer>\n\n{{na_word}}\n{{#na_sentence}}\n<br><br>\n<i>{{na_sentence}}</i>\n{{/na_sentence}}\n{{#na_note}}\n<br><br>\n<small>{{na_note}}</small>\n{{/na_note}}"
     },
     {
       "name": "Card 2",
-      "front": "{{ro_word}}\n{{#ro_sentence}}\n<br><br>\n<i>{{ro_sentence}}</i>\n{{/ro_sentence}}\n{{#ro_note}}\n<br><br>\n<small>{{ro_note}}</small>\n{{/ro_note}}",
-      "back": "{{FrontSide}}\n\n<hr id=answer>\n\n{{de_word}} {{de_word_audio}}\n{{#de_sentence}}\n<br><br>\n<i>{{de_sentence}}</i>\n{{/de_sentence}}\n{{de_audio}}"
+      "front": "{{na_word}}\n{{#na_sentence}}\n<br><br>\n<i>{{na_sentence}}</i>\n{{/na_sentence}}\n{{#na_note}}\n<br><br>\n<small>{{na_note}}</small>\n{{/na_note}}",
+      "back": "{{FrontSide}}\n\n<hr id=answer>\n\n{{#fo_sentence}}\n<i>{{fo_sentence}}</i>\n{{/fo_sentence}}\n{{fo_sentence_audio}}\n\n{{fo_word}} {{fo_word_audio}}"
     }
   ],
   "css": ".card {\n font-family: arial;\n font-size: 20px;\n text-align: center;\n color: black;\n background-color: white;\n}\n.replay-button svg {\n width: 40px;\n height: 40px;\n}\n.replay-button svg circle {\n fill: #279FF5;\n}\n.replay-button svg path {\n fill: white;\n}\n",
@@ -58,8 +58,8 @@
     "voices": [],
     "targets": [
       {
-        "field": "de_audio",
-        "source": "de_sentence",
+        "field": "fo_sentence_audio",
+        "source": "fo_sentence",
         "prefix": "sent",
         "dialogue": {
           "enabled": true,
@@ -68,8 +68,8 @@
         }
       },
       {
-        "field": "de_word_audio",
-        "source": "de_word",
+        "field": "fo_word_audio",
+        "source": "fo_word",
         "prefix": "word",
         "strip_html": true
       }
